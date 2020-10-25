@@ -10,6 +10,7 @@ import { CONTACTS } from '../contact-list';
 export class ContactsComponent implements OnInit {
   contacts = CONTACTS;
   selectedContact;
+  searchText = '';
   onSelect(contact: Contact): void {
     this.selectedContact = contact;
   }
