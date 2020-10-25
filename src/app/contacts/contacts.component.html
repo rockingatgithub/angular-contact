@@ -1,29 +1,28 @@
-<div class="content" role="main">
-  <div class="card">
-    <div class="form-group">
-      <label for="search-text">Search Text</label>
-      <input
-        type="email"
-        class="form-control"
-        id="search-text"
-        aria-describedby="search-text"
-        [(ngModel)]="searchText"
-        placeholder="Enter text to search"
-        autofocus
-      />
-    </div>
+<div id="main-container">
+  <div id="list-block">
+    <label for="search-text">Search Text</label>
+    <input
+      type="email"
+      class="form-control"
+      id="search-text"
+      aria-describedby="search-text"
+      [(ngModel)]="searchText"
+      placeholder="Enter text to search"
+      autofocus
+    />
+
+    <ul class="heroes">
+      <li
+        *ngFor="let contact of contacts | appFilter: searchText"
+        [class.selected]="contact === selectedContact"
+        (click)="onSelect(contact)"
+      >
+        <span class="badge">{{ contact["Home Phone"] }}</span>
+        {{ contact["First Name"] }}
+      </li>
+    </ul>
+  </div>
+  <div id="display-block">
+    <app-contact-detail [contact]="selectedContact"></app-contact-detail>
   </div>
 </div>
-
-<ul class="heroes">
-  <li
-    *ngFor="let contact of contacts | appFilter: searchText"
-    [class.selected]="contact === selectedContact"
-    (click)="onSelect(contact)"
-  >
-    <span class="badge">{{ contact["Home Phone"] }}</span>
-    {{ contact["First Name"] }}
-  </li>
-</ul>
-
-<app-contact-detail [contact]="selectedContact"></app-contact-detail>

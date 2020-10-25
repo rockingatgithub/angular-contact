@@ -5,7 +5,8 @@ import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
 import { AppComponent } from './app.component';
 import { ContactsComponent } from './contacts/contacts.component';
 import { ContactDetailComponent } from './contact-detail/contact-detail.component';
-import { FilterPipe } from './pipes/filter.pipe'; // -> imported filter pipe
+import { FilterPipe } from './pipes/filter.pipe';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap'; // -> imported filter pipe
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { FilterPipe } from './pipes/filter.pipe'; // -> imported filter pipe
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
