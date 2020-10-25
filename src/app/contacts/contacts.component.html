@@ -1,11 +1,10 @@
-<h2>My Heroes</h2>
 <ul class="heroes">
   <li
     *ngFor="let contact of contacts"
     [class.selected]="contact === selectedContact"
     (click)="onSelect(contact)"
   >
-    <span class="badge">{{ contact["E-mail Address"] }}</span>
+    <span class="badge">{{ contact["Home Phone"] }}</span>
     {{ contact["First Name"] }}
   </li>
 </ul>

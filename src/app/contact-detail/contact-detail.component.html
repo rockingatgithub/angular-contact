@@ -1,13 +1,17 @@
-<div *ngIf="selectedContact">
-  <h2>{{ selectedContact["E-mail Address"] | uppercase }} Details</h2>
-  <div><span>id: </span>{{ selectedContact["First Name"] }}</div>
+<div *ngIf="contact">
+  <h2>{{ contact["E-mail Address"] | uppercase }} Details</h2>
+  <img src="https://ui-avatars.com/api/?name={{ contact['First Name'] }}" />
+  <div><span>id: </span>{{ contact["First Name"] }}</div>
   <div>
     <label
       >name:
-      <input
-        [(ngModel)]="selectedContact['E-mail Address']"
-        placeholder="name"
-      />
+      <input [(ngModel)]="contact['E-mail Address']" placeholder="name" />
+    </label>
+  </div>
+  <div>
+    <label
+      >Phone:
+      <input [(ngModel)]="contact['Home Phone']" placeholder="phone" />
     </label>
   </div>
 </div>
