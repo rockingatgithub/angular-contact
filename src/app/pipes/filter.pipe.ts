@@ -21,7 +21,10 @@ export class FilterPipe implements PipeTransform {
     searchText = searchText.toLocaleLowerCase();
     if (searchText.charAt(0) >= 'a' && searchText.charAt(0) <= 'z') {
       return items.filter((it) => {
-        return it['First Name'].toLocaleLowerCase().includes(searchText);
+        return (
+          it['First Name'].toLocaleLowerCase().includes(searchText) ||
+          it['E-mail Address'].toLocaleLowerCase().includes(searchText)
+        );
       });
     } else if (searchText.charAt(0) >= '0' && searchText.charAt(0) <= '9') {
       return items.filter((it) => {

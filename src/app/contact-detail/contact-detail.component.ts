@@ -1,19 +1,15 @@
 import { Component, OnInit, Input } from '@angular/core';
-import {Contact} from '../contact'
-
-
-
+import { Contact } from '../contact';
+import { MatInputModule } from '@angular/material/input';
 
 @Component({
   selector: 'app-contact-detail',
   templateUrl: './contact-detail.component.html',
-  styleUrls: ['./contact-detail.component.css']
+  styleUrls: ['./contact-detail.component.css'],
 })
 export class ContactDetailComponent implements OnInit {
   @Input() contact: Contact;
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

@@ -1,0 +1,17 @@
+.contact-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 350px;
+  background: linear-gradient(to right, #dae2f8, #d6a4a4);
+  margin-top: 58px;
+  border-radius: 30px;
+}
+.img-field {
+  display: inline-block;
+  position: relative;
+  height: 100px;
+  width: 100px;
+  border-radius: 50px;
+}

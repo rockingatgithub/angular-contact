@@ -1,17 +1,25 @@
-<div *ngIf="contact">
-  <h2>{{ contact["E-mail Address"] | uppercase }} Details</h2>
-  <img src="https://ui-avatars.com/api/?name={{ contact['First Name'] }}" />
-  <div><span>id: </span>{{ contact["First Name"] }}</div>
-  <div>
+<div *ngIf="contact" class="contact-box">
+  <img
+    class="img-field"
+    src="https://ui-avatars.com/api/?name={{ contact['First Name'] }}"
+  />
+
+  <div class="name-field">
     <label
-      >name:
+      >Name:
       <input [(ngModel)]="contact['First Name']" placeholder="name" />
     </label>
   </div>
-  <div>
+  <div class="phone-field">
     <label
       >Phone:
       <input [(ngModel)]="contact['Home Phone']" placeholder="phone" />
+    </label>
+  </div>
+  <div class="email-field">
+    <label
+      >Email:
+      <input [(ngModel)]="contact['E-mail Address']" placeholder="email" />
     </label>
   </div>
 </div>

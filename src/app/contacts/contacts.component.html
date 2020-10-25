@@ -1,28 +1,50 @@
-<div id="main-container">
-  <div id="list-block">
-    <label for="search-text">Search Text</label>
-    <input
-      type="email"
-      class="form-control"
-      id="search-text"
-      aria-describedby="search-text"
-      [(ngModel)]="searchText"
-      placeholder="Enter text to search"
-      autofocus
-    />
-
-    <ul class="heroes">
-      <li
-        *ngFor="let contact of contacts | appFilter: searchText"
-        [class.selected]="contact === selectedContact"
-        (click)="onSelect(contact)"
-      >
-        <span class="badge">{{ contact["Home Phone"] }}</span>
-        {{ contact["First Name"] }}
-      </li>
-    </ul>
+<div class="container">
+  <div class="row no-gutters">
+    <div class="col">
+      <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+          <img
+            src="https://img.icons8.com/fluent/48/000000/new-contact.png"
+            width="48"
+            height="48"
+            alt=""
+            loading="lazy"
+          />
+          Angular Contact
+        </a>
+      </nav>
+    </div>
   </div>
-  <div id="display-block">
-    <app-contact-detail [contact]="selectedContact"></app-contact-detail>
+  <div class="row my-row">
+    <div class="col-lg-6">
+      <input
+        type="email"
+        class="form-control"
+        id="search-text"
+        aria-describedby="search-text"
+        [(ngModel)]="searchText"
+        placeholder="Enter a name or a number or an email to search"
+        autofocus
+      />
+
+      <ul class="list-group my-list">
+        <li
+          class="list-group-item my-item"
+          *ngFor="let contact of contacts | appFilter: searchText"
+          [class.selected]="contact === selectedContact"
+          (click)="onSelect(contact)"
+        >
+          <img
+            src="https://ui-avatars.com/api/?name={{ contact['First Name'] }}"
+            class="small-img-field"
+          />
+          <span>{{ contact["First Name"] }}</span>
+          <span>{{ contact["Home Phone"] }}</span>
+        </li>
+      </ul>
+    </div>
+    <div class="col-lg-6">
+      <app-contact-detail [contact]="selectedContact"></app-contact-detail>
+    </div>
   </div>
 </div>
