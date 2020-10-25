@@ -13,6 +13,7 @@ export class ContactsComponent implements OnInit {
   searchText = '';
   onSelect(contact: Contact): void {
     this.selectedContact = contact;
+    document.documentElement.scrollTop = 0;
   }
   constructor() {}
 
