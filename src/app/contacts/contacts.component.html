@@ -1,0 +1,25 @@
+<h2>My Heroes</h2>
+<ul class="heroes">
+  <li
+    *ngFor="let contact of contacts"
+    [class.selected]="contact === selectedContact"
+    (click)="onSelect(contact)"
+  >
+    <span class="badge">{{ contact["E-mail Address"] }}</span>
+    {{ contact["First Name"] }}
+  </li>
+</ul>
+
+<div *ngIf="selectedContact">
+  <h2>{{ selectedContact["E-mail Address"] | uppercase }} Details</h2>
+  <div><span>id: </span>{{ selectedContact["First Name"] }}</div>
+  <div>
+    <label
+      >name:
+      <input
+        [(ngModel)]="selectedContact['E-mail Address']"
+        placeholder="name"
+      />
+    </label>
+  </div>
+</div>

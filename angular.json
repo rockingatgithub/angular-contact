@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "angular-contact"
+    }
+  },
+  "defaultProject": "angular-contact",
+  "cli": {
+    "analytics": false
+  }
 }
