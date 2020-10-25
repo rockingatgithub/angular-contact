@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Contact } from '../contact';
-import { MatInputModule } from '@angular/material/input';
 
 @Component({
   selector: 'app-contact-detail',
