@@ -7,6 +7,7 @@
   background: linear-gradient(to right, #dae2f8, #d6a4a4);
   margin-top: 58px;
   border-radius: 30px;
+  max-width: 400px;
 }
 .img-field {
   display: inline-block;
@@ -14,4 +15,8 @@
   height: 100px;
   width: 100px;
   border-radius: 50px;
+}
+
+@media only screen and (max-width: 760px){
+  
 }
