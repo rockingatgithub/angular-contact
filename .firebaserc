@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "angular-contact-7879c": {
+      "hosting": {
+        "angular-contact": [
+          "angular-contact-7879c"
+        ]
+      }
+    }
+  }
+}
